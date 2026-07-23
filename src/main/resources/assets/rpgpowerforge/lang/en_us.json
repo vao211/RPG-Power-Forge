@@ -1,0 +1,16 @@
+﻿{
+  "item.rpgpowerforge.basic_power_orb": "Basic Power Orb",
+  "item.rpgpowerforge.basic_power_orb.tooltip": "Raw magical energy. Used for crafting higher tier orbs.",
+  "item.rpgpowerforge.basic_power_orb.drop_title": "✦ Drop Sources:",
+  "item.rpgpowerforge.basic_power_orb.drop_common": "• 10% Chance: Wither Skeleton, Slime, Pillager, Vindicator",
+  "item.rpgpowerforge.basic_power_orb.drop_boss": "• 100% Chance (3x): Ender Dragon, Wither, Warden",
+  "item.rpgpowerforge.upgrade_power_orb_1": "Upgrade Power Orb (Level 1)",
+  "item.rpgpowerforge.upgrade_power_orb_2": "Upgrade Power Orb (Level 2)",
+  "item.rpgpowerforge.upgrade_power_orb_3": "Upgrade Power Orb (Level 3)",
+  "item.rpgpowerforge.upgrade_power_orb_4": "Upgrade Power Orb (Level 4)",
+  "item.rpgpowerforge.upgrade_power_orb_5": "Upgrade Power Orb (Level 5)",
+  "block.rpgpowerforge.upgrade_power_table": "Upgrade Power Table",
+  "item.rpgpowerforge.upgrade_power_orb.tooltip": "Upgrades equipment to Power Level %s",
+  "item.rpgpowerforge.upgrade_power_orb.requirement": "Requires equipment at Power Level %s",
+  "container.rpgpowerforge.upgrade_power_table": "Power Forge Table"
+}

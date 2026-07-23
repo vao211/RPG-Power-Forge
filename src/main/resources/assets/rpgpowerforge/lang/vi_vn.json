@@ -1,0 +1,16 @@
+﻿{
+  "item.rpgpowerforge.basic_power_orb": "Ngọc Sức Mạnh Cơ Bản",
+  "item.rpgpowerforge.basic_power_orb.tooltip": "Năng lượng ma thuật thô. Dùng để chế tạo ngọc cấp cao hơn.",
+  "item.rpgpowerforge.basic_power_orb.drop_title": "✦ Nguồn săn ngọc:",
+  "item.rpgpowerforge.basic_power_orb.drop_common": "• 10% Tỷ lệ: Wither Skeleton, Slime, Pillager, Vindicator",
+  "item.rpgpowerforge.basic_power_orb.drop_boss": "• 100% Tỷ lệ (Rơi 3 viên): Rồng Ender, Wither, Warden",
+  "item.rpgpowerforge.upgrade_power_orb_1": "Ngọc Nâng Cấp Sức Mạnh (Cấp 1)",
+  "item.rpgpowerforge.upgrade_power_orb_2": "Ngọc Nâng Cấp Sức Mạnh (Cấp 2)",
+  "item.rpgpowerforge.upgrade_power_orb_3": "Ngọc Nâng Cấp Sức Mạnh (Cấp 3)",
+  "item.rpgpowerforge.upgrade_power_orb_4": "Ngọc Nâng Cấp Sức Mạnh (Cấp 4)",
+  "item.rpgpowerforge.upgrade_power_orb_5": "Ngọc Nâng Cấp Sức Mạnh (Cấp 5)",
+  "block.rpgpowerforge.upgrade_power_table": "Bàn Nâng Cấp Sức Mạnh",
+  "item.rpgpowerforge.upgrade_power_orb.tooltip": "Nâng cấp trang bị lên Sức Mạnh Cấp %s",
+  "item.rpgpowerforge.upgrade_power_orb.requirement": "Yêu cầu trang bị đang ở Sức Mạnh Cấp %s",
+  "container.rpgpowerforge.upgrade_power_table": "Bàn Rèn Sức Mạnh"
+}

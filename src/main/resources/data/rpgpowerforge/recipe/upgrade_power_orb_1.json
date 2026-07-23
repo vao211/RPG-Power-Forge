@@ -1,0 +1,18 @@
+﻿{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " I ",
+    " O ",
+    " C "
+  ],
+  "key": {
+    "O": { "item": "rpgpowerforge:basic_power_orb" },
+    "I": { "item": "minecraft:iron_block" },
+    "C": { "item": "minecraft:copper_block" }
+  },
+  "result": {
+    "id": "rpgpowerforge:upgrade_power_orb_1",
+    "count": 2
+  }
+}

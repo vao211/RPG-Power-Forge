@@ -1,0 +1,18 @@
+﻿{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " D ",
+    " O ",
+    " E "
+  ],
+  "key": {
+    "O": { "item": "rpgpowerforge:upgrade_power_orb_2" },
+    "D": { "item": "minecraft:diamond_block" },
+    "E": { "item": "minecraft:emerald_block" }
+  },
+  "result": {
+    "id": "rpgpowerforge:upgrade_power_orb_3",
+    "count": 2
+  }
+}

@@ -1,0 +1,24 @@
+﻿{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "NDG",
+    "EOL",
+    "ICR"
+  ],
+  "key": {
+    "O": { "item": "rpgpowerforge:upgrade_power_orb_4" },
+    "N": { "item": "minecraft:netherite_block" },
+    "D": { "item": "minecraft:diamond_block" },
+    "G": { "item": "minecraft:gold_block" },
+    "E": { "item": "minecraft:emerald_block" },
+    "L": { "item": "minecraft:lapis_block" },
+    "I": { "item": "minecraft:iron_block" },
+    "C": { "item": "minecraft:copper_block" },
+    "R": { "item": "minecraft:redstone_block" }
+  },
+  "result": {
+    "id": "rpgpowerforge:upgrade_power_orb_5",
+    "count": 1
+  }
+}

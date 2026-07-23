@@ -1,0 +1,18 @@
+﻿{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "EE",
+    "GG",
+    "II"
+  ],
+  "key": {
+    "E": { "item": "minecraft:emerald" },
+    "G": { "item": "minecraft:gold_block" },
+    "I": { "item": "minecraft:iron_block" }
+  },
+  "result": {
+    "id": "rpgpowerforge:upgrade_power_table",
+    "count": 1
+  }
+}

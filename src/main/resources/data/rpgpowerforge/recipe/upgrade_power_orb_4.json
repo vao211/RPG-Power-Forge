@@ -1,0 +1,19 @@
+﻿{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "NDN",
+    "EOE",
+    "NDN"
+  ],
+  "key": {
+    "O": { "item": "rpgpowerforge:upgrade_power_orb_3" },
+    "D": { "item": "minecraft:diamond_block" },
+    "E": { "item": "minecraft:emerald_block" },
+    "N": { "item": "minecraft:netherite_ingot" }
+  },
+  "result": {
+    "id": "rpgpowerforge:upgrade_power_orb_4",
+    "count": 2
+  }
+}

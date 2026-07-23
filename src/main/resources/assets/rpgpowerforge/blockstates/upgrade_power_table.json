@@ -1,0 +1,5 @@
+﻿{
+  "variants": {
+    "": { "model": "rpgpowerforge:block/upgrade_power_table" }
+  }
+}

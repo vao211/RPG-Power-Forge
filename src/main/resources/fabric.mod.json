@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "rpgpowerforge",
+  "version": "${version}",
+  "name": "RPG Power Forge",
+  "description": "Add more weapons",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/rpgpowerforge/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "vao211.rpgpowerforge.client.RpgPowerForgeDataGenerator"
+    ],
+    "client": [
+      "vao211.rpgpowerforge.client.RpgPowerForgeClient"
+    ],
+    "main": [
+      "vao211.rpgpowerforge.RpgPowerForge"
+    ]
+  },
+  "mixins": [
+    "rpgpowerforge.mixins.json",
+    {
+      "config": "rpgpowerforge.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}",
+    "dungeon_difficulty": ">=3.6.0"
+  }
+}

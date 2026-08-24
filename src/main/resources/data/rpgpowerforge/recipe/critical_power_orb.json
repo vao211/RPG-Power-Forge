@@ -1,0 +1,15 @@
+﻿{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " A ",
+    "DOD",
+    " A "
+  ],
+  "key": {
+    "O": { "item": "rpgpowerforge:basic_attribute_orb" },
+    "A": { "item": "minecraft:iron_axe" },
+    "D": {"item":  "minecraft:diamond"}
+  },
+  "result": { "id": "rpgpowerforge:critical_power_orb", "count": 1 }
+}

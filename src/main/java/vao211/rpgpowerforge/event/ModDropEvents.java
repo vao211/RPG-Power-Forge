@@ -27,6 +27,10 @@ public class ModDropEvents {
             if (type == EntityType.ENDER_DRAGON || type == EntityType.WITHER || type == EntityType.WARDEN) {
                 dropItem(world, entity, new ItemStack(ModRegistry.BASIC_POWER_ORB, 3));
             }
+
+            if (world.random.nextFloat() < 0.05f) {
+                dropItem(world, entity, new ItemStack(ModRegistry.BASIC_ATTRIBUTE_ORB, 1));
+            }
         });
     }
 

@@ -1,0 +1,4 @@
+﻿{
+  "parent": "minecraft:item/generated",
+  "textures": { "layer0": "rpgpowerforge:item/basic_attribute_orb" }
+}

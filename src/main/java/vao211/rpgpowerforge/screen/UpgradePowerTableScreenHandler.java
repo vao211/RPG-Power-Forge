@@ -5,13 +5,20 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.CraftingResultInventory;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.inventory.SimpleInventory;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.registry.Registries;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.ScreenHandlerContext;
 import net.minecraft.screen.slot.Slot;
+import net.minecraft.util.Identifier;
+import vao211.rpgpowerforge.item.AttributeOrbItem;
+import vao211.rpgpowerforge.item.ClearOrbItem;
 import vao211.rpgpowerforge.item.UpgradePowerOrbItem;
 import vao211.rpgpowerforge.registry.ModRegistry;
 import vao211.rpgpowerforge.util.UpgradeUtil;
+
+import java.util.List;
 
 public class UpgradePowerTableScreenHandler extends ScreenHandler {
     private final Inventory inputInventory = new SimpleInventory(2) {
@@ -39,7 +46,9 @@ public class UpgradePowerTableScreenHandler extends ScreenHandler {
         this.addSlot(new Slot(this.inputInventory, 1, 76, 47) {
             @Override
             public boolean canInsert(ItemStack stack) {
-                return stack.getItem() instanceof UpgradePowerOrbItem;
+                return stack.getItem() instanceof UpgradePowerOrbItem
+                        || stack.getItem() instanceof AttributeOrbItem
+                        || stack.getItem() instanceof ClearOrbItem;
             }
         });
 
@@ -52,6 +61,19 @@ public class UpgradePowerTableScreenHandler extends ScreenHandler {
 
             @Override
             public void onTakeItem(PlayerEntity player, ItemStack stack) {
+                ItemStack inputEquip = inputInventory.getStack(0);
+                ItemStack inputOrb = inputInventory.getStack(1);
+
+                if (inputOrb.getItem() instanceof ClearOrbItem) {
+                    List<String> oldOrbIds = UpgradeUtil.getAppliedOrbIds(inputEquip);
+                    for (String orbId : oldOrbIds) {
+                        Item itemToReturn = Registries.ITEM.get(Identifier.tryParse(orbId));
+                        if (itemToReturn != net.minecraft.item.Items.AIR) {
+                            player.getInventory().offerOrDrop(new ItemStack(itemToReturn));
+                        }
+                    }
+                }
+
                 inputInventory.removeStack(0, 1);
                 inputInventory.removeStack(1, 1);
                 super.onTakeItem(player, stack);
@@ -74,17 +96,33 @@ public class UpgradePowerTableScreenHandler extends ScreenHandler {
         ItemStack equipment = this.inputInventory.getStack(0);
         ItemStack orb = this.inputInventory.getStack(1);
 
-        if (equipment.isEmpty() || orb.isEmpty() || !(orb.getItem() instanceof UpgradePowerOrbItem orbItem)) {
+        if (equipment.isEmpty() || orb.isEmpty()) {
             this.outputInventory.setStack(0, ItemStack.EMPTY);
             return;
         }
 
-        if (UpgradeUtil.canUpgrade(equipment, orbItem.getOrbLevel())) {
-            ItemStack result = UpgradeUtil.performUpgrade(equipment, orbItem.getOrbLevel());
-            this.outputInventory.setStack(0, result);
-        } else {
-            this.outputInventory.setStack(0, ItemStack.EMPTY);
+        if (orb.getItem() instanceof UpgradePowerOrbItem orbItem) {
+            if (UpgradeUtil.canUpgrade(equipment, orbItem.getOrbLevel())) {
+                this.outputInventory.setStack(0, UpgradeUtil.performUpgrade(equipment, orbItem.getOrbLevel()));
+                return;
+            }
         }
+
+        else if (orb.getItem() instanceof AttributeOrbItem attrOrb) {
+            if (UpgradeUtil.canApplyAttributeOrb(equipment)) {
+                this.outputInventory.setStack(0, UpgradeUtil.applyAttributeOrb(equipment, attrOrb));
+                return;
+            }
+        }
+
+        else if (orb.getItem() instanceof ClearOrbItem) {
+            if (UpgradeUtil.hasOrbsToClear(equipment)) {
+                this.outputInventory.setStack(0, UpgradeUtil.clearOrbs(equipment));
+                return;
+            }
+        }
+
+        this.outputInventory.setStack(0, ItemStack.EMPTY);
     }
 
     @Override
@@ -115,23 +153,35 @@ public class UpgradePowerTableScreenHandler extends ScreenHandler {
     public ItemStack quickMove(PlayerEntity player, int invSlot) {
         ItemStack newStack = ItemStack.EMPTY;
         Slot slot = this.slots.get(invSlot);
-        if (slot != null && slot.hasStack()) {
+        if (slot.hasStack()) {
             ItemStack originalStack = slot.getStack();
             newStack = originalStack.copy();
+
             if (invSlot == 2) {
                 if (!this.insertItem(originalStack, 3, 39, true)) {
                     return ItemStack.EMPTY;
                 }
                 slot.onQuickTransfer(originalStack, newStack);
-            } else if (invSlot != 0 && invSlot != 1) {
-                if (originalStack.getItem() instanceof UpgradePowerOrbItem) {
+            }
+            else if (invSlot != 0 && invSlot != 1) {
+                if (originalStack.getItem() instanceof UpgradePowerOrbItem
+                        || originalStack.getItem() instanceof AttributeOrbItem
+                        || originalStack.getItem() instanceof ClearOrbItem) {
                     if (!this.insertItem(originalStack, 1, 2, false)) {
                         return ItemStack.EMPTY;
                     }
-                } else if (!this.insertItem(originalStack, 0, 1, false)) {
+                }
+                else if (UpgradeUtil.isUpgradeableEquipment(originalStack)) {
+                    if (!this.insertItem(originalStack, 0, 1, false)) {
+                        return ItemStack.EMPTY;
+                    }
+                }
+                else if (!this.insertItem(originalStack, 3, 39, false)) {
                     return ItemStack.EMPTY;
                 }
-            } else if (!this.insertItem(originalStack, 3, 39, false)) {
+            }
+
+            else if (!this.insertItem(originalStack, 3, 39, false)) {
                 return ItemStack.EMPTY;
             }
 

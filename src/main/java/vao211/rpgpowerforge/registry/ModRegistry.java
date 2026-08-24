@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
@@ -14,8 +15,7 @@ import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.util.Identifier;
 import vao211.rpgpowerforge.RpgPowerForge;
 import vao211.rpgpowerforge.block.UpgradePowerTableBlock;
-import vao211.rpgpowerforge.item.BasicPowerOrbItem;
-import vao211.rpgpowerforge.item.UpgradePowerOrbItem;
+import vao211.rpgpowerforge.item.*;
 import vao211.rpgpowerforge.screen.UpgradePowerTableScreenHandler;
 
 public class ModRegistry {
@@ -28,6 +28,22 @@ public class ModRegistry {
     public static final Item UPGRADE_POWER_ORB_3 = registerItem("upgrade_power_orb_3", new UpgradePowerOrbItem(new Item.Settings(), 3));
     public static final Item UPGRADE_POWER_ORB_4 = registerItem("upgrade_power_orb_4", new UpgradePowerOrbItem(new Item.Settings(), 4));
     public static final Item UPGRADE_POWER_ORB_5 = registerItem("upgrade_power_orb_5", new UpgradePowerOrbItem(new Item.Settings(), 5));
+    public static final Item BASIC_ATTRIBUTE_ORB = registerItem("basic_attribute_orb", new BasicAttributeOrbItem(new Item.Settings()));
+    public static final Item CLEAR_ORB = registerItem("clear_orb", new ClearOrbItem(new Item.Settings()));
+    public static final Item CRIT_ORB = registerItem("critical_orb", new AttributeOrbItem(
+            new Item.Settings(),
+            Identifier.of("critical_strike", "chance"),
+            0.05,
+            EntityAttributeModifier.Operation.ADD_VALUE
+    ));
+
+    public static final Item CRIT_POWER_ORB = registerItem("critical_power_orb", new AttributeOrbItem(
+            new Item.Settings(),
+            Identifier.of("critical_strike", "damage"),
+            0.05,
+            EntityAttributeModifier.Operation.ADD_VALUE
+    ));
+
 
     public static final Block UPGRADE_POWER_TABLE_BLOCK = registerBlock("upgrade_power_table", new UpgradePowerTableBlock(AbstractBlock.Settings.copy(Blocks.SMITHING_TABLE)));    public static final ScreenHandlerType<UpgradePowerTableScreenHandler> UPGRADE_POWER_TABLE_SCREEN_HANDLER =
             Registry.register(Registries.SCREEN_HANDLER, Identifier.of(MOD_ID, "upgrade_power_table"),
@@ -50,6 +66,10 @@ public class ModRegistry {
             entries.add(UPGRADE_POWER_ORB_3);
             entries.add(UPGRADE_POWER_ORB_4);
             entries.add(UPGRADE_POWER_ORB_5);
+            entries.add(BASIC_ATTRIBUTE_ORB);
+            entries.add(CLEAR_ORB);
+            entries.add(CRIT_ORB);
+            entries.add(CRIT_POWER_ORB);
         });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register(entries -> {
             entries.add(UPGRADE_POWER_TABLE_BLOCK);

@@ -1,0 +1,14 @@
+﻿{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " B ",
+    "BOB",
+    " B "
+  ],
+  "key": {
+    "O": { "item": "rpgpowerforge:basic_attribute_orb" },
+    "A": { "item": "minecraft:brush" }
+  },
+  "result": { "id": "rpgpowerforge:clear_orb", "count": 1}
+}

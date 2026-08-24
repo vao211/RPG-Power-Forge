@@ -1,0 +1,26 @@
+﻿{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_basic_power_orb": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "rpgpowerforge:basic_attribute_orb"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [ "has_basic_attribute_orb" ]
+  ],
+  "rewards": {
+    "recipes": [
+      "rpgpowerforge:upgrade_power_table",
+      "rpgpowerforge:clear_orb",
+      "rpgpowerforge:critical_orb",
+      "rpgpowerforge:critical_power_orb"
+    ]
+  }
+}

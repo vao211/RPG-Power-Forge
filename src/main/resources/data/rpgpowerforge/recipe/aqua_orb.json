@@ -2,14 +2,14 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "pattern": [
-    " K ",
+    " W ",
     "POP",
-    " K "
+    " W "
   ],
   "key": {
     "O": { "item": "rpgpowerforge:basic_attribute_orb" },
-    "K": { "item": "minecraft:kelp" },
-    "P": { "item": "minecraft:potion" }
+    "W": { "item": "minecraft:water_bucket" },
+    "P": { "item": "minecraft:lingering_potion" }
   },
   "result": { "id": "rpgpowerforge:aqua_orb", "count": 1 }
 }

@@ -1,1 +1,1 @@
-﻿Cần làm:  thêm lighting, nốt aqua, earth, wind, nature
+﻿Cần làm: nốt aqua, earth, wind, nature

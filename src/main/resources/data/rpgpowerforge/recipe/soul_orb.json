@@ -1,0 +1,14 @@
+﻿{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " S ",
+    "SOS",
+    " S "
+  ],
+  "key": {
+    "O": { "item": "rpgpowerforge:basic_attribute_orb" },
+    "S": { "item": "minecraft:soul_sand" }
+  },
+  "result": { "id": "rpgpowerforge:soul_orb", "count": 1 }
+}

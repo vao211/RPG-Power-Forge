@@ -1,0 +1,15 @@
+﻿{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " G ",
+    "COC",
+    " G "
+  ],
+  "key": {
+    "O": { "item": "rpgpowerforge:basic_attribute_orb" },
+    "G": { "item": "minecraft:gold_block" },
+    "C": { "item": "minecraft:cooper_block"}
+  },
+  "result": { "id": "rpgpowerforge:lightning_orb", "count": 1 }
+}

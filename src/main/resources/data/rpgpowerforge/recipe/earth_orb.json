@@ -1,0 +1,15 @@
+﻿{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " G ",
+    "BOB",
+    " G "
+  ],
+  "key": {
+    "O": { "item": "rpgpowerforge:basic_attribute_orb" },
+    "G": { "item": "polished_granite" },
+    "B": {"item": "brown_concrete"}
+  },
+  "result": { "id": "rpgpowerforge:earth_orb", "count": 1 }
+}

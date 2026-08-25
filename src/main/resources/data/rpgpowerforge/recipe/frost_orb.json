@@ -3,12 +3,13 @@
   "category": "misc",
   "pattern": [
     " S ",
-    "SOS",
+    "IOI",
     " S "
   ],
   "key": {
     "O": { "item": "rpgpowerforge:basic_attribute_orb" },
-    "S": { "item": "minecraft:snow_block" }
+    "S": { "item": "minecraft:snow" },
+    "I": {"item": "minecraft:ice"}
   },
   "result": { "id": "rpgpowerforge:frost_orb", "count": 1 }
 }

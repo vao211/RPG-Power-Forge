@@ -8,7 +8,7 @@
   ],
   "key": {
     "O": { "item": "rpgpowerforge:basic_attribute_orb" },
-    "G": { "item": "minecraft:gold_ingot" },
+    "G": { "item": "minecraft:gold_block" },
     "P": { "item": "minecraft:potato"}
   },
   "result": { "id": "rpgpowerforge:heal_orb", "count": 1 }

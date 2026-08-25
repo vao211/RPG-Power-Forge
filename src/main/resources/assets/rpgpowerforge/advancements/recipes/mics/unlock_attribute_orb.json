@@ -25,10 +25,12 @@
       "rpgpowerforge:arcane_orb",
       "rpgpowerforge:heal_orb",
       "rpgpowerforge:frost_orb",
-
+      "rpgpowerforge:lightning_orb",
+      "rpgpowerforge:soul_orb",
       "rpgpowerforge:aqua_orb",
-      "rpgpowerforge:storm_orb",
-      "rpgpowerforge:gaia_orb"
+      "rpgpowerforge:air_orb",
+      "rpgpowerforge:earth_orb",
+      "rpgpowerforge:nature_orb"
     ]
   }
 }

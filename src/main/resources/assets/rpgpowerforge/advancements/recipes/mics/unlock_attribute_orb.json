@@ -20,7 +20,15 @@
       "rpgpowerforge:upgrade_power_table",
       "rpgpowerforge:clear_orb",
       "rpgpowerforge:critical_orb",
-      "rpgpowerforge:critical_power_orb"
+      "rpgpowerforge:critical_power_orb",
+      "rpgpowerforge:flame_orb",
+      "rpgpowerforge:arcane_orb",
+      "rpgpowerforge:heal_orb",
+      "rpgpowerforge:frost_orb",
+
+      "rpgpowerforge:aqua_orb",
+      "rpgpowerforge:storm_orb",
+      "rpgpowerforge:gaia_orb"
     ]
   }
 }

@@ -1,0 +1,15 @@
+﻿{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " G ",
+    "POP",
+    " G "
+  ],
+  "key": {
+    "O": { "item": "rpgpowerforge:basic_attribute_orb" },
+    "G": { "item": "minecraft:gold_ingot" },
+    "P": { "item": "minecraft:potato"}
+  },
+  "result": { "id": "rpgpowerforge:heal_orb", "count": 1 }
+}

@@ -33,18 +33,45 @@ public class ModRegistry {
     public static final Item CRIT_ORB = registerItem("critical_orb", new AttributeOrbItem(
             new Item.Settings(),
             Identifier.of("critical_strike", "chance"),
-            0.05,
-            EntityAttributeModifier.Operation.ADD_VALUE
+            0.1,
+            EntityAttributeModifier.Operation.ADD_MULTIPLIED_BASE
     ));
-
     public static final Item CRIT_POWER_ORB = registerItem("critical_power_orb", new AttributeOrbItem(
             new Item.Settings(),
             Identifier.of("critical_strike", "damage"),
-            0.05,
+            0.1,
+            EntityAttributeModifier.Operation.ADD_MULTIPLIED_BASE
+    ));
+    public static final Item FLAME_ORB =registerItem("flame_orb", new AttributeOrbItem(
+            new Item.Settings(),
+            Identifier.of("spell_power", "fire"),
+            3,
             EntityAttributeModifier.Operation.ADD_VALUE
     ));
-
-
+    public static final Item ARCANE_ORB = registerItem("arcane_orb", new AttributeOrbItem(
+            new Item.Settings(),
+            Identifier.of("spell_power", "arcane"),
+            3,
+            EntityAttributeModifier.Operation.ADD_VALUE
+    ));
+    public static final Item FROST_ORB = registerItem("frost_orb", new AttributeOrbItem(
+       new Item.Settings(),
+       Identifier.of("spell_power", "frost"),
+            3,
+        EntityAttributeModifier.Operation.ADD_VALUE
+    ));
+    public static final Item HEAL_ORB = registerItem("heal_orb", new AttributeOrbItem(
+            new Item.Settings(),
+            Identifier.of("spell_power", "healing"),
+            3,
+            EntityAttributeModifier.Operation.ADD_VALUE
+    ));
+    public static final Item AQUA_ORB = registerItem("aqua_orb", new AttributeOrbItem(
+            new Item.Settings(),
+            Identifier.of("spell_power", "aqua"),
+            3,
+            EntityAttributeModifier.Operation.ADD_VALUE
+    ));
     public static final Block UPGRADE_POWER_TABLE_BLOCK = registerBlock("upgrade_power_table", new UpgradePowerTableBlock(AbstractBlock.Settings.copy(Blocks.SMITHING_TABLE)));    public static final ScreenHandlerType<UpgradePowerTableScreenHandler> UPGRADE_POWER_TABLE_SCREEN_HANDLER =
             Registry.register(Registries.SCREEN_HANDLER, Identifier.of(MOD_ID, "upgrade_power_table"),
                     new ScreenHandlerType<>(UpgradePowerTableScreenHandler::new, FeatureFlags.VANILLA_FEATURES));
@@ -70,6 +97,11 @@ public class ModRegistry {
             entries.add(CLEAR_ORB);
             entries.add(CRIT_ORB);
             entries.add(CRIT_POWER_ORB);
+            entries.add(FLAME_ORB);
+            entries.add(ARCANE_ORB);
+            entries.add(FROST_ORB);
+            entries.add(HEAL_ORB);
+            entries.add(AQUA_ORB);
         });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register(entries -> {
             entries.add(UPGRADE_POWER_TABLE_BLOCK);

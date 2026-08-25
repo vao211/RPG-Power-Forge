@@ -1,0 +1,14 @@
+﻿{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " A ",
+    "AOA",
+    " A "
+  ],
+  "key": {
+    "O": { "item": "rpgpowerforge:basic_attribute_orb" },
+    "A": { "item": "minecraft:amethyst_shard" }
+  },
+  "result": { "id": "rpgpowerforge:arcane_orb", "count": 1 }
+}

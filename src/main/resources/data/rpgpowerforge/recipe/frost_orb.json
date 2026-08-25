@@ -1,0 +1,14 @@
+﻿{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " S ",
+    "SOS",
+    " S "
+  ],
+  "key": {
+    "O": { "item": "rpgpowerforge:basic_attribute_orb" },
+    "S": { "item": "minecraft:snow_block" }
+  },
+  "result": { "id": "rpgpowerforge:frost_orb", "count": 1 }
+}

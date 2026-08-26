@@ -30,7 +30,12 @@
       "rpgpowerforge:aqua_orb",
       "rpgpowerforge:air_orb",
       "rpgpowerforge:earth_orb",
-      "rpgpowerforge:nature_orb"
+      "rpgpowerforge:nature_orb",
+      "rpgpowerforge:damage_orb",
+      "rpgpowerforge:attack_speed_orb",
+      "rpgpowerforge:health_orb",
+      "rpgpowerforge:armor_orb",
+      "rpgpowerforge:toughness_orb"
     ]
   }
 }

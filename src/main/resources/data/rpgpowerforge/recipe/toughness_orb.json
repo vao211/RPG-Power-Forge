@@ -1,0 +1,15 @@
+﻿{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " S ",
+    "SOC",
+    " C "
+  ],
+  "key": {
+    "O": { "item": "rpgpowerforge:basic_attribute_orb" },
+    "S": { "item": "minecraft:shield" },
+    "C": {"item": "minecraft:iron_chestplate"}
+  },
+  "result": { "id": "rpgpowerforge:toughness_orb", "count": 1 }
+}

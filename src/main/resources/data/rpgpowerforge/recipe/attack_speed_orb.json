@@ -1,0 +1,14 @@
+﻿{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " S ",
+    "SOS",
+    " S "
+  ],
+  "key": {
+    "O": { "item": "rpgpowerforge:basic_attribute_orb" },
+    "A": { "item": "minecraft:iron_sword" }
+  },
+  "result": { "id": "rpgpowerforge:attack_speed_orb", "count": 1 }
+}

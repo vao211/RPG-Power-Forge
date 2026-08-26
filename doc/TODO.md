@@ -1,1 +1,1 @@
-﻿Cần làm: nốt aqua, earth, wind, nature
+﻿

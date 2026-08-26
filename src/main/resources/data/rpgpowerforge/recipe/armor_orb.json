@@ -1,0 +1,17 @@
+﻿{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " H ",
+    "COL",
+    " B "
+  ],
+  "key": {
+    "O": { "item": "rpgpowerforge:basic_attribute_orb" },
+    "H": { "item": "minecraft:iron_helmet" },
+    "C": {"item": "minecraft:iron_chestplate"},
+    "L": {"item": "minecraft:iron_leggings"},
+    "B": {"item": "minecraft:iron_boots"}
+  },
+  "result": { "id": "rpgpowerforge:armor_orb", "count": 1 }
+}

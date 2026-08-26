@@ -1,6 +1,7 @@
 ﻿{
   "item.rpgpowerforge.basic_power_orb": "Ngọc Sức Mạnh Cơ Bản",
   "item.rpgpowerforge.basic_power_orb.tooltip": "Năng lượng ma thuật thô. Dùng để chế tạo ngọc cấp cao hơn.",
+  "item.rpgpowerforge.basic_attribute_orb.tooltip": "Năng lượng thô. Dùng để chế tạo ngọc thuộc tính.",
   "item.rpgpowerforge.basic_power_orb.drop_title": "✦ Nguồn săn ngọc:",
   "item.rpgpowerforge.basic_power_orb.drop_common": "• 10% Tỷ lệ: Wither Skeleton, Slime, Pillager, Vindicator",
   "item.rpgpowerforge.basic_power_orb.drop_boss": "• 100% Tỷ lệ (Rơi 3 viên): Rồng Ender, Wither, Warden",

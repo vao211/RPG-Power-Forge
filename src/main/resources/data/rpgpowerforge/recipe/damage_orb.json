@@ -1,0 +1,15 @@
+﻿{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " S ",
+    "AOA",
+    " S "
+  ],
+  "key": {
+    "O": { "item": "rpgpowerforge:basic_attribute_orb" },
+    "A": { "item": "minecraft:iron_axe" },
+    "S": {"item": "minecraft:iron_sword"}
+  },
+  "result": { "id": "rpgpowerforge:damage_orb", "count": 1 }
+}

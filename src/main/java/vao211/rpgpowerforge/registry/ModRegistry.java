@@ -101,7 +101,31 @@ public class ModRegistry {
             Identifier.of("spell_power", "nature"),
             3.0, EntityAttributeModifier.Operation.ADD_VALUE
     ));
-
+    public static final Item DAMAGE_ORB = registerItem("damage_orb", new AttributeOrbItem(
+            new Item.Settings(),
+            Identifier.ofVanilla("generic.attack_damage"),
+            1, EntityAttributeModifier.Operation.ADD_VALUE
+    ));
+    public static final Item ATTACK_SPEED_ORB = registerItem("attack_speed_orb", new AttributeOrbItem(
+            new Item.Settings(),
+            Identifier.ofVanilla("generic.attack_speed"),
+            0.1,EntityAttributeModifier.Operation.ADD_MULTIPLIED_BASE
+    ));
+    public static final Item HEALTH_ORB = registerItem("health_orb", new AttributeOrbItem(
+            new Item.Settings(),
+            Identifier.ofVanilla("generic.max_health"),
+            1,EntityAttributeModifier.Operation.ADD_VALUE
+    ));
+    public static final Item ARMOR_ORB = registerItem("armor_orb", new AttributeOrbItem(
+            new Item.Settings(),
+            Identifier.ofVanilla("generic.armor"),
+            1,EntityAttributeModifier.Operation.ADD_VALUE
+    ));
+    public static final Item TOUGHNESS_ORB = registerItem("toughness_orb", new AttributeOrbItem(
+            new Item.Settings(),
+            Identifier.ofVanilla("generic.armor_toughness"),
+            2, EntityAttributeModifier.Operation.ADD_VALUE
+    ));
     public static final Block UPGRADE_POWER_TABLE_BLOCK = registerBlock("upgrade_power_table", new UpgradePowerTableBlock(AbstractBlock.Settings.copy(Blocks.SMITHING_TABLE)));    public static final ScreenHandlerType<UpgradePowerTableScreenHandler> UPGRADE_POWER_TABLE_SCREEN_HANDLER =
             Registry.register(Registries.SCREEN_HANDLER, Identifier.of(MOD_ID, "upgrade_power_table"),
                     new ScreenHandlerType<>(UpgradePowerTableScreenHandler::new, FeatureFlags.VANILLA_FEATURES));
@@ -134,10 +158,14 @@ public class ModRegistry {
             entries.add(LIGHTNING_ORB);
             entries.add(SOUL_ORB);
             entries.add(AQUA_ORB);
-
             entries.add(AIR_ORB);
             entries.add(EARTH_ORB);
             entries.add(NATURE_ORB);
+            entries.add(DAMAGE_ORB);
+            entries.add(ATTACK_SPEED_ORB);
+            entries.add(HEALTH_ORB);
+            entries.add(ARMOR_ORB);
+            entries.add(TOUGHNESS_ORB);
         });
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register(entries -> {

@@ -51,12 +51,10 @@ public class UpgradeUtil {
         ItemStack upgradedStack = equipment.copy();
         upgradedStack.setCount(1);
 
-        // Xóa scale cũ bằng hàm chuẩn của DD 3.9.2 để khôi phục đúng attribute gốc
         if (ItemScaling.isScaled(upgradedStack)) {
             ItemScaling.removeScaling(upgradedStack);
         }
 
-        // Áp dụng scale cố định (không random)
         scaleDeterministic(upgradedStack, orbLevel);
 
         return upgradedStack;
@@ -263,5 +261,38 @@ public class UpgradeUtil {
 
         itemStack.set(DataComponentTypes.ATTRIBUTE_MODIFIERS, newAttributeComponent.build());
         ItemScaling.markAsScaled(itemStack, level);
+    }
+
+    public static boolean canMergeUpgrade(ItemStack first, ItemStack second) {
+        if (!isUpgradeableEquipment(first) || !isUpgradeableEquipment(second)) {
+            return false;
+        }
+        if (!first.isOf(second.getItem())) {
+            return false;
+        }
+
+        int level1 = ItemScaling.getScaleFactor(first);
+        int level2 = ItemScaling.getScaleFactor(second);
+
+        return level1 >= 5 && level1 == level2;
+    }
+
+    public static ItemStack performMergeUpgrade(ItemStack first, ItemStack second) {
+        if (!canMergeUpgrade(first, second)) {
+            return ItemStack.EMPTY;
+        }
+
+        int nextLevel = ItemScaling.getScaleFactor(first) + 1;
+
+        ItemStack upgradedStack = first.copy();
+        upgradedStack.setCount(1);
+
+        if (ItemScaling.isScaled(upgradedStack)) {
+            ItemScaling.removeScaling(upgradedStack);
+        }
+
+        scaleDeterministic(upgradedStack, nextLevel);
+
+        return upgradedStack;
     }
 }

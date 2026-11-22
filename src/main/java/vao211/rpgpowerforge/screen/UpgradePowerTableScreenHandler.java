@@ -21,7 +21,7 @@ public class UpgradePowerTableScreenHandler extends ScreenHandler {
             onContentChanged(this);
         }
     };
-    private final CraftingResultInventory outputInventory = new CraftingResultInventory();
+    private final Inventory outputInventory = new SimpleInventory(1);
     private final ScreenHandlerContext context;
 
     public UpgradePowerTableScreenHandler(int syncId, PlayerInventory playerInventory) {
@@ -44,7 +44,7 @@ public class UpgradePowerTableScreenHandler extends ScreenHandler {
         });
 
         // Slot 2: Kết quả Output
-        this.addSlot(new Slot(this.outputInventory, 2, 134, 47) {
+        this.addSlot(new Slot(this.outputInventory, 0, 134, 47) {
             @Override
             public boolean canInsert(ItemStack stack) {
                 return false;
@@ -71,20 +71,24 @@ public class UpgradePowerTableScreenHandler extends ScreenHandler {
     }
 
     private void updateResult() {
-        ItemStack equipment = this.inputInventory.getStack(0);
-        ItemStack orb = this.inputInventory.getStack(1);
+        this.context.run((world, pos) -> {
+            ItemStack equipment = this.inputInventory.getStack(0);
+            ItemStack orb = this.inputInventory.getStack(1);
 
-        if (equipment.isEmpty() || orb.isEmpty() || !(orb.getItem() instanceof UpgradePowerOrbItem orbItem)) {
-            this.outputInventory.setStack(0, ItemStack.EMPTY);
-            return;
-        }
+            if (equipment.isEmpty() || orb.isEmpty() || !(orb.getItem() instanceof UpgradePowerOrbItem orbItem)) {
+                this.outputInventory.setStack(0, ItemStack.EMPTY);
+                this.sendContentUpdates();
+                return;
+            }
 
-        if (UpgradeUtil.canUpgrade(equipment, orbItem.getOrbLevel())) {
-            ItemStack result = UpgradeUtil.performUpgrade(equipment, orbItem.getOrbLevel());
-            this.outputInventory.setStack(0, result);
-        } else {
-            this.outputInventory.setStack(0, ItemStack.EMPTY);
-        }
+            if (UpgradeUtil.canUpgrade(equipment, orbItem.getOrbLevel())) {
+                ItemStack result = UpgradeUtil.performUpgrade(equipment, orbItem.getOrbLevel());
+                this.outputInventory.setStack(0, result);
+            } else {
+                this.outputInventory.setStack(0, ItemStack.EMPTY);
+            }
+            this.sendContentUpdates();
+        });
     }
 
     @Override
